@@ -31,7 +31,8 @@ Crear un formulario como el detallado en la imagen de abajo. Una vez que el usua
 Crear una pantalla como la detallada en el diagrama de abajo, donde el usuario podrá ingresar hasta 3 productos. A lado de cada producto habrá un checkbox que permita seleccionar el/los producto(s) y presentarlos posteriormente en el modal que se abre al dar click en el botón de abajo de la pantalla.
 
 
-![examenes pucetec-paralelo 1302 drawio (1)](https://github.com/pucetec/examen-final-1302/assets/987192/111d30c7-f0e8-4bef-8e25-5dffd6af0930)
+![examenes pucetec-paralelo 1302 drawio (2)](https://github.com/pucetec/examen-final-1302/assets/987192/974e49f2-9587-4097-90c3-9836bf8f6c44)
+
 
 
 
