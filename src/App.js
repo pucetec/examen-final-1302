@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { ProveedorDeContexto } from "./contexts/Contexto";
+import Producto1 from "./components/Producto1/Producto1";
+import Producto2 from "./components/Producto2/Producto2";
+import Producto3 from "./components/Producto3/Producto3";
 
-function App() {
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <ProveedorDeContexto>
+      <div className="contenedor-general">
+        <h2>CMS Tienda Deportiva (CTD)</h2><br />
+        <div className="contenedor-producto-1">
+          <Producto1 />
+        </div>
+        <div className="contenedor-producto-2">
+          <Producto2 />
+        </div>
+        <div className="contenedor-producto-3">
+          <Producto3 />
+        </div>
+      </div>
+    </ProveedorDeContexto>
+
   );
-}
+
+};
 
 export default App;
