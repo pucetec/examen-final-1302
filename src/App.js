@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { Grid, TextField, Checkbox, FormControl, FormControlLabel, 
-  Select, MenuItem, InputLabel, TextareaAutosize, Box, Button, Modal } from "@mui/material";
+import { Grid, TextField, Checkbox, FormControl, FormControlLabel,Select, MenuItem, InputLabel, TextareaAutosize, Box, Button, Modal } from "@mui/material";
+
 
 const Formulario = () => {
-  const [nombre, setNombre] = useState('');
-  const [apellidos, setApellidos] = useState('');
-  const [sexo, setSexo] = useState('');
-  const [edad, setEdad] = useState('');
-  const [telefono, setTelefono] = useState('');
-  const [foto, setFoto] = useState('');
-  const [enfermedades, setEnfermedades] = useState({
+const [nombre, setNombre] = useState('');
+const [apellidos, setApellidos] = useState('');
+const [sexo, setSexo] = useState('');
+const [edad, setEdad] = useState('');
+const [telefono, setTelefono] = useState('');
+const [foto, setFoto] = useState('');
+const [enfermedades, setEnfermedades] = useState({
     diabetes: false,
     cirrosis: false,
     vih: false,
@@ -21,6 +21,7 @@ const Formulario = () => {
   const [nota, setNota] = useState('');
   const [openModal, setOpenModal] = useState(false);
 
+
   const handleEnfermedadChange = (enfermedad) => {
     setEnfermedades({
       ...enfermedades,
@@ -28,14 +29,17 @@ const Formulario = () => {
     });
   };
 
+
   const handleSubmit = () => {
     // Lógica del envío o procesamiento de datos
     setOpenModal(true);
   };
 
+
   const handleCloseModal = () => {
     setOpenModal(false);
   };
+
 
   return (
     <Grid container spacing={3}>
@@ -101,6 +105,7 @@ const Formulario = () => {
         </Button>
       </Grid>
 
+
       {/* Modal */}
       <Modal open={openModal} onClose={handleCloseModal}>
         <Box
@@ -139,5 +144,6 @@ const Formulario = () => {
     </Grid>
   );
 };
+
 
 export default Formulario;
