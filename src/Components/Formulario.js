@@ -61,8 +61,13 @@ const Formulario = () => {
       </form>
 
       <Modal open={modalOpen} onClose={handleClose} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ backgroundColor: '#FFFFFF', border: '2px solid #000000', boxShadow: '24px', padding: '20px', width: '600px', borderRadius: '10px' }}>
+      
+        <div style={{ backgroundColor: '#FFFFFF', border: '2px solid #000000', boxShadow: '24px', padding: '20px', width: '600px', borderRadius: '10px', textAlign: 'center'}}>
         <HighlightOffIcon onClick={handleClose}/>
+        <p textAlign='center'><strong>{nombres} {apellidos}</strong></p>
+        <p><strong>({edad} años/ {sexo})</strong></p>
+          
+          
           <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', flexDirection: 'column', width: '48%', borderRight: '1px solid black', paddingRight: '10px' }}>
               <h2 style={{ textAlign: 'center' }}>Foto del Paciente</h2>
