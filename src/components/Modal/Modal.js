@@ -1,10 +1,20 @@
-import { useState } from "react";
-import { ProductoContextProvider } from "../../contexts/ProductContext";
-const Products = () => {
+import React, { useState } from "react";
+import Modal from "react-modal";
+
+const Producto = () => {
   const [nombre, setNombre] = useState("");
   const [valor, setValor] = useState("");
   const [imagen, setImagen] = useState("");
   const [descripcion, setDescripcion] = useState("");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
 
   return (
     <div>
@@ -29,7 +39,7 @@ const Products = () => {
           />
         </div>
         <div>
-          <label htmlFor="imagen">URL:</label>
+          <label htmlFor="imagen">Imagen URL:</label>
           <input
             type="text"
             id="imagen"
@@ -45,10 +55,21 @@ const Products = () => {
             onChange={(event) => setDescripcion(event.target.value)}
           />
         </div>
-        <button type="submit">Agregar Producto</button>
+        <button type="button" onClick={openModal}>
+          Ver Detalles
+        </button>
       </form>
+
+      <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
+        <h2>Detalles del Producto</h2>
+        <p>Nombre: {nombre}</p>
+        <p>Valor: {valor}</p>
+        <p>Imagen URL: {imagen}</p>
+        <p>Descripción: {descripcion}</p>
+        <button onClick={closeModal}>Cerrar</button>
+      </Modal>
     </div>
   );
 };
 
-export default Products;
+export default Producto;

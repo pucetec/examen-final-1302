@@ -1,15 +1,18 @@
+import Products from "./components/Products/Products";
+import { ProductoContextProvider } from "./contexts/ProductContext";
+
 const App = () => {
   return (
-    <div>
-      <h1>CMS tienda Deportiva</h1>
-      <div>
-        <input type="text">Nombre </input>
-        <input type="text">valor </input>
-        <input type="text">Imagen </input>
-        <input type="checkbox">Nombre </input>
-        <input type="text">Descripcion </input>
-      </div>
-    </div>
+    <ProductoContextProvider value={{ setProduct }}>
+      <div
+        style={{
+          width: "20%",
+          margin: "auto",
+        }}
+      />
+      <input onChange={(event) => setProduct(event)} />
+      <Products></Products>
+    </ProductoContextProvider>
   );
 };
 
