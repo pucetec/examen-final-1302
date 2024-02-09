@@ -1,4 +1,32 @@
 body {
-  background-color: rgb(41, 41, 41);
-  color: rgb(196, 196, 196);
+  background-color: rgb(29, 29, 29);
+  color: rgb(182, 181, 181);
+}
+
+.contenedor-general {
+  width: auto;
+  text-align: center;
+  height: auto;
+  margin: auto;
+}
+
+input {
+  margin: 1% 0% 1% 10%;
+}
+
+.contenedor-modal {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.modal-izquierda {
+  grid-column: 1/2;
+}
+
+.modal-centro {
+  grid-column: 2/3;
+}
+
+.modal-derecha {
+  grid-column: 3/4;
 }
