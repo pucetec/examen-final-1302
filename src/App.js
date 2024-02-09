@@ -1,5 +1,13 @@
+import React from "react";
+import PantallaPrincipal from "./common/PantallaPrincipal";
+import { ProductosProvider } from "./common/ProductosContext";
+
 const App = () => {
-  return <div className="App"></div>;
+  return (
+    <ProductosProvider>
+      <PantallaPrincipal />
+    </ProductosProvider>
+  );
 };
 
 export default App;
