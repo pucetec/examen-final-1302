@@ -1,6 +1,6 @@
 import Products from "./components/Products/Products";
 import { ProductoContextProvider } from "./contexts/ProductContext";
-
+import Modal from "./components/Modal/Modal" 
 const App = () => {
   return (
     <ProductoContextProvider value={{ setProduct }}>
@@ -13,6 +13,10 @@ const App = () => {
       <input onChange={(event) => setProduct(event)} />
       <Products></Products>
     </ProductoContextProvider>
+
+    <Modal>
+      
+    </Modal>
   );
 };
 
