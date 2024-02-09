@@ -72,7 +72,6 @@ function App() {
     sexo: "",
     edad: "",
     telefono: "",
-    foto: "",
     notas: "",
   });
 
@@ -93,7 +92,6 @@ function App() {
       sexo: "",
       edad: "",
       telefono: "",
-      foto: "",
       notas: "",
     });
   };
@@ -150,7 +148,7 @@ function App() {
           <CustomTextField
             label="Telefono"
             name="telefono"
-            value={emergencyData.apellidos}
+            value={emergencyData.telefono}
             onChange={(event) => handleTextFieldChange(event, "telefono")}
           />
         </Typography>
@@ -239,6 +237,14 @@ function App() {
         onClose={handleCloseModal}
         formValues={emergencyData}
         onSubmit={handleSubmit}
+        title="Datos del Paciente"
+        textFieldsData={[
+          { label: "Nombres", value: emergencyData.nombres },
+          { label: "Apellidos", value: emergencyData.apellidos },
+          { label: "Edad", value: emergencyData.edad },
+          { label: "Telefono", value: emergencyData.telefono },
+          { label: "Notas", value: emergencyData.notas },
+        ]}
       />
     </div>
   );
