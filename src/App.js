@@ -174,7 +174,7 @@ function App() {
           style={{
             content: {
               width: "45%",
-              height: "50%",
+              height: "80%",
               margin: "auto",
             },
           }}
@@ -182,10 +182,14 @@ function App() {
           <h2>
             {formData.firstName} {formData.lastName}
           </h2>
+          <img
+            src={formData.photoLink}
+            alt="Foto del paciente"
+            style={{ maxWidth: "100%", maxHeight: "50%", margin: "20px 0" }}
+          />
           <p>Edad: {formData.age}</p>
           <p>Sexo: {formData.gender}</p>
           <p>Teléfono: {formData.phone}</p>
-          <p>Foto: {formData.photoLink}</p>
           <p>Enfermedades Preexistentes:</p>
           <ul>
             {Object.entries(formData.enfermedades).map(
