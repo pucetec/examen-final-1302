@@ -4,6 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import {
   TextField,
   Button,
+  Checkbox,
+  FormControlLabel,
   Select,
   MenuItem,
   FormControl,
@@ -28,6 +30,13 @@ function App() {
     age: "",
     phone: "",
     photoLink: "",
+    enfermedades: {
+      diabetes: false,
+      VIH: false,
+      hipertension: false,
+      paraplejia: false,
+      lupus: false,
+    },
   });
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -36,6 +45,16 @@ function App() {
     setFormData({
       ...formData,
       [name]: value,
+    });
+  };
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    setFormData({
+      ...formData,
+      enfermedades: {
+        ...formData.enfermedades,
+        [name]: checked,
+      },
     });
   };
 
@@ -120,6 +139,26 @@ function App() {
                 onChange={handleChange}
               />
             </Grid>
+            <p>Enfermedades Preexistentes</p>
+            <ul>
+              {Object.entries(formData.enfermedades).map(
+                ([enfermedad, seleccionada]) => (
+                  <li key={enfermedad}>
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          checked={seleccionada}
+                          onChange={handleCheckboxChange}
+                          name={enfermedad}
+                          color="primary"
+                        />
+                      }
+                      label={enfermedad}
+                    />
+                  </li>
+                )
+              )}
+            </ul>
             <Grid item>
               <Button type="submit" variant="contained" color="primary">
                 Enviar
@@ -128,11 +167,10 @@ function App() {
           </Grid>
         </form>
 
-        {/* Modal */}
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
-          contentLabel="Información del Paciente"
+          contentLabel={`Información de ${formData.firstName} ${formData.lastName}`}
           style={{
             content: {
               width: "45%",
@@ -141,14 +179,20 @@ function App() {
             },
           }}
         >
-          <h2>Información del Paciente</h2>
-          <p>
-            Nombre: {formData.firstName} {formData.lastName}
-          </p>
-          <p>Sexo: {formData.gender}</p>
+          <h2>
+            {formData.firstName} {formData.lastName}
+          </h2>
           <p>Edad: {formData.age}</p>
+          <p>Sexo: {formData.gender}</p>
           <p>Teléfono: {formData.phone}</p>
           <p>Foto: {formData.photoLink}</p>
+          <p>Enfermedades Preexistentes:</p>
+          <ul>
+            {Object.entries(formData.enfermedades).map(
+              ([enfermedad, seleccionada]) =>
+                seleccionada && <li key={enfermedad}>{enfermedad}</li>
+            )}
+          </ul>
           <Button onClick={closeModal} variant="contained" color="secondary">
             Cerrar
           </Button>
