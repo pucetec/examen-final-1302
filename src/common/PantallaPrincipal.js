@@ -35,7 +35,9 @@ const PantallaPrincipal = () => {
               <li key={index}>
                 <div>Nombre: {producto.nombre}</div>
                 <div>Valor: {producto.valor}</div>
-                {/* Agregar el resto de la información del producto */}
+                <div>Imagen: <img src={producto.imagen} alt={producto.nombre} /></div>
+                <div>Tamaño Disponible: {producto.tamaño}</div>
+                <div>Descripción: {producto.descripcion}</div>
               </li>
             ))}
           </ul>
@@ -52,8 +54,20 @@ const PantallaPrincipal = () => {
       <AgregarProducto id={1} titulo="Producto 1" />
       <AgregarProducto id={2} titulo="Producto 2" />
       <AgregarProducto id={3} titulo="Producto 3" />
-      <button onClick={handleMostrarProductos}>
-        VER PRODUCTOS SELECCIONADOS
+      <button
+        onClick={handleMostrarProductos}
+        style={{
+          display: "block",
+          margin: "0 auto",
+          backgroundColor: "blue",
+          color: "white",
+          padding: "10px 20px",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer"
+        }}
+      >
+        VER PRODUCTO SELECCIONADO
       </button>
       <Modal
         isOpen={modalOpen}

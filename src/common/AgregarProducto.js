@@ -50,7 +50,7 @@ const AgregarProducto = ({ id, titulo }) => {
       case 3:
         return (
           <div style={{ marginTop: "10px" }}>
-            <p>Tamaño:</p>
+            <p>Tamaño Disponible:</p>
             <input
               type="checkbox"
               id="large"
@@ -77,7 +77,7 @@ const AgregarProducto = ({ id, titulo }) => {
       case 2:
         return (
           <div style={{ marginTop: "10px" }}>
-            <p>Tamaño:</p>
+            <p>Tamaño Disponible:</p>
             <input
               type="checkbox"
               id="5"
