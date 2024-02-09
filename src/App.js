@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import Products from "./components/Products/Products";
+import { ProductoContextProvider } from "./contexts/ProductContext";
+import Modal from "./components/Modal/Modal" 
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ProductoContextProvider value={{ setProduct }}>
+      <div
+        style={{
+          width: "20%",
+          margin: "auto",
+        }}
+      />
+      <input onChange={(event) => setProduct(event)} />
+      <Products></Products>
+    </ProductoContextProvider>
+
+    <Modal>
+      
+    </Modal>
   );
-}
+};
 
 export default App;
