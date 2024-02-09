@@ -1,38 +1,151 @@
-.App {
+.patient-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.patient-form h2 {
   text-align: center;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.patient-form input[type="text"],
+.patient-form input[type="number"],
+.patient-form select,
+.patient-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.patient-form .gender-select,
+.patient-form .enfermedades-list {
+  margin-bottom: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.patient-form .gender-select label,
+.patient-form .enfermedades-list label {
+  margin-right: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.patient-form .gender-select input[type="radio"],
+.patient-form .enfermedades-list input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.patient-form select {
+  display: block;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.patient-form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.patient-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #005a87;
   color: white;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.patient-form button:hover {
+  background-color: #003f63;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background-color: #fff;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+  overflow: hidden;
+}
+
+.modal-header {
+  background-color: #eee;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.modal-header h2 span {
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.close-button {
+  font-size: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.modal-photo img {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+}
+
+.modal-footer {
+  background-color: #eee;
+  padding: 10px 20px;
+  text-align: right;
+}
+
+.modal-footer button {
+  padding: 5px 15px;
+  border-radius: 4px;
+  background-color: #005a87;
+  color: white;
+  cursor: pointer;  
+}
+
+.modal-footer button:hover {
+  background-color: #003f63;
 }
