@@ -14,8 +14,11 @@ const App = () => {
       <div>
         <Typography level={"h1"} children={"CMS TIENDA DEPORTIVA"}></Typography>
       </div>
-      <div>
-        <Typography level={"h2"} children={"Producto 1"}></Typography>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <label htmlFor="producto1">
+          <Typography level={"h2"} children={"Producto 1"}></Typography>
+        </label>
+        <input type="checkbox" id="producto1" name="producto1" />
       </div>
       <div>
         <label>Nombre</label>
@@ -30,6 +33,64 @@ const App = () => {
         <ImageInput placeholder={"Ingrese la URL de una imagen"} />
       </div>
       <div>
+        <Typography level={"h4"} children={"Tamaños Disponibles"} />
+        <SizeCheckbox />
+      </div>
+      <div>
+        <DescriptionTextArea />
+      </div>
+      <div>
+        <ViewButton />
+      </div>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <label htmlFor="producto1">
+          <Typography level={"h2"} children={"Producto 2"}></Typography>
+        </label>
+        <input type="checkbox" id="producto1" name="producto1" />
+      </div>
+      <div>
+        <label>Nombre</label>
+        <NameInput placeholder={"Nombre del producto"} />
+      </div>
+      <div>
+        <label>Valor</label>
+        <PriceInput placeholder={"Precio"} />
+      </div>
+      <div>
+        <label>Imagen</label>
+        <ImageInput placeholder={"Ingrese la URL de una imagen"} />
+      </div>
+      <div>
+        <Typography level={"h4"} children={"Tamaños Disponibles"} />
+        <SizeCheckbox />
+      </div>
+      <div>
+        <DescriptionTextArea />
+      </div>
+
+      <div>
+        <ViewButton />
+      </div>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <label htmlFor="producto1">
+          <Typography level={"h2"} children={"Producto 3"}></Typography>
+        </label>
+        <input type="checkbox" id="producto1" name="producto1" />
+      </div>
+      <div>
+        <label>Nombre</label>
+        <NameInput placeholder={"Nombre del producto"} />
+      </div>
+      <div>
+        <label>Valor</label>
+        <PriceInput placeholder={"Precio"} />
+      </div>
+      <div>
+        <label>Imagen</label>
+        <ImageInput placeholder={"Ingrese la URL de una imagen"} />
+      </div>
+      <div>
+        <Typography level={"h4"} children={"Tamaños Disponibles"} />
         <SizeCheckbox />
       </div>
       <div>

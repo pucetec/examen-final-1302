@@ -1,5 +1,6 @@
 import React from "react";
 import { useFormContext } from "../../context/FormContext";
+import { Button } from "@mui/material";
 
 const CloseButton = () => {
   const { setOpen } = useFormContext();
@@ -8,7 +9,9 @@ const CloseButton = () => {
   };
   return (
     <div>
-      <button onClick={handleClose}>Cerrar</button>
+      <Button variant={"contained"} onClick={handleClose}>
+        Cerrar
+      </Button>
     </div>
   );
 };

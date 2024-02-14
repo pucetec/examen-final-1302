@@ -1,15 +1,15 @@
 import React from "react";
 import { useFormContext } from "../../context/FormContext";
-
+import { TextField } from "@mui/material";
 const ImageInput = ({ placeholder }) => {
   const { image, handleNewImage } = useFormContext();
   return (
     <div>
-      <input
+      <TextField
         placeholder={placeholder}
         value={image}
         onChange={handleNewImage}
-      ></input>
+      ></TextField>
     </div>
   );
 };

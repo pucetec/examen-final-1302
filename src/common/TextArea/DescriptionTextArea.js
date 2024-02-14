@@ -6,6 +6,7 @@ const DescriptionTextArea = () => {
   return (
     <div>
       <label>Descripción</label>
+      <br />
       <textarea value={description} onChange={handleNewDescription}></textarea>
     </div>
   );
